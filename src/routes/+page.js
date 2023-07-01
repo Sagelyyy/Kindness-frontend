@@ -1,3 +1,10 @@
-// since there's no dynamic data here, we can prerender
-// it so that it gets served as a static asset in production
-export const prerender = true;
+export async function load({ fetch }) {
+  const res = await fetch("http://localhost:3000/api/posts", {
+    credentials: "include",
+  });
+  const posts = await res.json();
+  console.log(posts[0]);
+  return {
+    posts,
+  };
+}
