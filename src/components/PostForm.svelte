@@ -5,6 +5,7 @@
   let formData = "";
   let inputData = "";
   let errors;
+
   async function handleForm() {
     const res = await fetch("http://localhost:3000/api/posts", {
       method: "POST",
@@ -32,7 +33,11 @@
   <Errors {errors} />
 {/if}
 
+<div class="submit-title-container">
+  <h1>Submit a post</h1>
+</div>
 <div class="form-container">
+  <div id="avatar" />
   <form on:submit|preventDefault={handleForm}>
     <input
       class="form-input"
@@ -52,6 +57,13 @@
 </div>
 
 <style>
+  .submit-title-container {
+    position: fixed;
+    top: 90px;
+    right: 150px;
+    font-family: var(--fancy-font);
+    color: var(--font-white);
+  }
   .form-container {
     position: fixed;
     top: 150px;
@@ -61,6 +73,7 @@
     justify-content: center;
     background-color: var(--bg-offset);
     padding: 10px;
+    border-radius: 10px;
   }
 
   form {
