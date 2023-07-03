@@ -1,6 +1,6 @@
 # Kindness - A Learning Project
 
-[Link to Server](https://github.com/Sagelyyy/Kindness-server)
+[Live Preview](https://do-good.netlify.app/) [Link to Server](https://github.com/Sagelyyy/Kindness-server)
 
 Kindness is a full-stack web application built as a personal project to enhance my skills in Postgres, Supabase, and full-stack development. The application allows users to share positive messages with each other in real time, fostering a community of kindness and positivity.
 
@@ -11,8 +11,6 @@ Kindness is a full-stack web application built as a personal project to enhance 
 - **Profanity Filter:** We want to keep our platform a safe and respectful space for all users. As such, we've implemented a profanity filter to keep conversations clean and positive.
 
 - **Fun Avatars:** Users are assigned a unique, fun avatar based on their username, adding a visual and personalized element to the platform.
-
-## Technology Stack
 
 ## Technology Stack
 
