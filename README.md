@@ -1,38 +1,33 @@
-# create-svelte
+# Kindness - A Learning Project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[Link to Server](https://github.com/Sagelyyy/Kindness-server)
 
-## Creating a project
+Kindness is a full-stack web application built as a personal project to enhance my skills in Postgres, Supabase, and full-stack development. The application allows users to share positive messages with each other in real time, fostering a community of kindness and positivity.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- **Real-time Updates:** Powered by Supabase, updates to the application (such as new posts) are reflected in real-time. This ensures a dynamic and interactive user experience.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- **Profanity Filter:** We want to keep our platform a safe and respectful space for all users. As such, we've implemented a profanity filter to keep conversations clean and positive.
 
-## Developing
+- **Fun Avatars:** Users are assigned a unique, fun avatar based on their username, adding a visual and personalized element to the platform.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Technology Stack
 
-```bash
-npm run dev
+## Technology Stack
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- **Frontend:** The application is built with [SvelteKit](https://kit.svelte.dev), a powerful front-end framework for building user interfaces. SvelteKit allows us to write highly efficient, imperative code that directly manipulates the DOM, while still providing the high-level abstraction that we'd expect from a client-side JavaScript framework.
 
-## Building
+- **Backend:** Our server side is built with [Node.js](https://nodejs.org), a JavaScript runtime built on Chrome's V8 JavaScript engine. The architecture follows a RESTful design pattern and utilizes the [Express](https://expressjs.com) framework to handle HTTP requests and routes.
 
-To create a production version of your app:
+- **Database:** We use [Postgres](https://www.postgresql.org) via [Supabase](https://supabase.io), providing a powerful, scalable relational database with real-time capabilities. Supabase adds realtime and RESTful APIs to Postgres without a single line of code.
 
-```bash
-npm run build
-```
+- **Hosting:** Hosted on [Netlify](https://www.netlify.com) for the frontend and [Railway](https://railway.app) for the backend, providing a seamless deployment experience.
 
-You can preview the production build with `npm run preview`.
+## Author
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Chris Weiskopf - Full Stack Developer.
+
+- [Github](https://github.com/Sagelyyy)
+- [LinkedIn](https://www.linkedin.com/in/chriscancode/)
+- [Portfolio](https://chriscancode.io/)
