@@ -2,23 +2,50 @@
   import Post from "../components/Post.svelte";
   import PostForm from "../components/PostForm.svelte";
   import Title from "../components/Title.svelte";
+  import { reloadPosts, posts } from "../utils/store.js";
+  import { onMount } from "svelte";
+  import { createClient } from "@supabase/supabase-js";
+  import { PUBLIC_URL, PUBLIC_ANON_KEY } from "$env/static/public";
 
-  export let posts;
-  export let data;
+  let postsData = [];
 
-  $: {
-    if (data) {
-      posts = data.posts;
-    } else {
-      posts = undefined;
+  const client = createClient(PUBLIC_URL, PUBLIC_ANON_KEY);
+
+  const channel = client
+    .channel("any")
+    .on("postgres_changes", { event: "*", schema: "*" }, (payload) => {
+      reloadPosts.set(true);
+    })
+    .subscribe();
+
+  const loadPosts = async () => {
+    const res = await fetch(
+      "https://kindness-server-production.up.railway.app/api/posts",
+      {
+        credentials: "include",
+      }
+    );
+    const newPosts = await res.json();
+    posts.set(newPosts);
+    reloadPosts.set(false);
+  };
+  onMount(loadPosts);
+
+  posts.subscribe((value) => {
+    postsData = value;
+  });
+
+  reloadPosts.subscribe((value) => {
+    if (value) {
+      loadPosts();
     }
-  }
+  });
 </script>
 
 <Title />
-{#if posts}
+{#if postsData}
   <section class="content">
-    <Post {posts} />
+    <Post posts={postsData} />
   </section>
 {:else}
   <section class="content">

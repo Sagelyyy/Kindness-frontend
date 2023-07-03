@@ -1,6 +1,6 @@
 <script>
-  import { invalidateAll } from "$app/navigation";
   import { flip } from "svelte/animate";
+  import { reloadPosts } from "../utils/store.js";
   import Errors from "./Errors.svelte";
   export let posts;
   let errors;
@@ -18,7 +18,7 @@
     );
 
     if (res.status == 200 || res.status == 204) {
-      invalidateAll();
+      reloadPosts.set(true);
     } else {
       errors = data.errors;
     }
