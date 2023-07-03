@@ -6,7 +6,6 @@ export async function load({ fetch }) {
     }
   );
   const posts = await res.json();
-  console.log(posts[0].message);
   return {
     posts,
   };

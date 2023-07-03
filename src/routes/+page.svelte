@@ -22,7 +22,7 @@
   </section>
 {:else}
   <section class="content">
-    <h1>Be the first to post something nice</h1>
+    <h1>Be the first to post something nice.</h1>
   </section>
 {/if}
 
@@ -36,7 +36,8 @@
     --notification: #17bebb;
     --error: #ef3e36;
     --error-dark: #9e0d05;
-    --fancy-font: "Comfortaa", cursive;
+    --fancy-font: "Comfortaa", sans-serif;
+    --primary-font: "Montserrat", sans-serif;
   }
 
   :global(html, body) {
@@ -44,6 +45,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: var(--primary-font);
   }
 
   :global(.trash) {
