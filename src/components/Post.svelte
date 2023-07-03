@@ -6,13 +6,16 @@
   let errors;
 
   async function handleDelete(id) {
-    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-      method: "DELETE",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://kindness-server-production.up.railway.app/api/posts/${id}`,
+      {
+        method: "DELETE",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (res.status == 200 || res.status == 204) {
       invalidateAll();
