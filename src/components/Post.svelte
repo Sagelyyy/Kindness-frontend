@@ -6,16 +6,13 @@
   let errors;
 
   async function handleDelete(id) {
-    const res = await fetch(
-      `https://kindness-server-production.up.railway.app/api/posts/${id}`,
-      {
-        method: "DELETE",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`https://kindnes.onrender.com/api/posts/${id}`, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (res.status == 200 || res.status == 204) {
       reloadPosts.set(true);

@@ -7,20 +7,17 @@
   let errors;
 
   async function handleForm() {
-    const res = await fetch(
-      "https://kindness-server-production.up.railway.app/api/posts",
-      {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: formData,
-          username: inputData,
-        }),
-      }
-    );
+    const res = await fetch("https://kindnes.onrender.com/api/posts", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: formData,
+        username: inputData,
+      }),
+    });
     let data = await res.json();
     if (res.status == 200) {
       formData = "";
