@@ -19,12 +19,9 @@
     .subscribe();
 
   const loadPosts = async () => {
-    const res = await fetch(
-      "https://sprightly-figolla-eb9d0d.netlify.app/api/posts",
-      {
-        credentials: "include",
-      }
-    );
+    const res = await fetch("https://kindnes.onrender.com/api/posts", {
+      credentials: "include",
+    });
     const newPosts = await res.json();
     posts.set(newPosts);
     reloadPosts.set(false);
